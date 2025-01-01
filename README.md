@@ -54,3 +54,13 @@ tmux source ~/.tmux.conf
 https://github.com/tmux-plugins/tpm
 https://github.com/tmux-plugins/tmux-yank
 ```
+### configaration tmux in terminal
+
+```
+nano ~/.bashrc  # Replace with your shell's file
+# Auto-start tmux
+if [ -z "$TMUX" ]; then
+    tmux attach || tmux new
+fi
+
+```
