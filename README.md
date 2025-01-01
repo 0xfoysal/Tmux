@@ -1,4 +1,4 @@
-# Tmux copy problem
+
 ## Clone TPM:
 ```
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
