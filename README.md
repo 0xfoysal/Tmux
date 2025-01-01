@@ -62,5 +62,8 @@ nano ~/.bashrc  # Replace with your shell's file
 if [ -z "$TMUX" ]; then
     tmux attach || tmux new
 fi
-
+```
+run
+```
+source ~/.bashrc  # Replace with your shell's file
 ```
