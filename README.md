@@ -8,6 +8,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # List of plugins
 # Enable mouse mode globally
 set -g mouse on
+set-option -g set-clipboard on
+setw -g mode-keys vi
+
+
 
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
@@ -16,8 +20,8 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-open'
 set -g @yank-action 'copy-pipe-and-cancel'
-bind - split-window -h -c "#{pane_current_path}"
-bind | split-window -v -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 set -g status-right "#(acpi | cut -d ',' -f 2) | %H:%M"
 set -g status-right "#(git rev-parse --abbrev-ref HEAD 2>/dev/null) | %H:%M"
 setw -g window-status-current-style fg=green,bg=black
@@ -26,6 +30,13 @@ set -g @plugin 'jimeh/tmux-themepack'
 # System monitoring
 set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-battery'
+
+# line copy
+set-option -g set-clipboard on
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "xclip -selection clipboard -i"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-and-cancel "xclip -selection clipboard -i"
+
+
 
 # Productivity plugins
 set -g @plugin 'tmux-plugins/tmux-open'
