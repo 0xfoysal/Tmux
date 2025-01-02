@@ -3,6 +3,10 @@
 ```
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+## install requirement
+```
+sudo apt install xclip
+```
 ## Put this at the bottom of ~/.tmux.conf ($XDG_CONFIG_HOME/tmux/tmux.conf works too):
 ```
 # List of plugins
@@ -77,4 +81,12 @@ fi
 run
 ```
 source ~/.bashrc  # Replace with your shell's file
+```
+## manually copy-paste command
+```
+enter copy mode: 	Ctrl + b then[
+to move around: 	Arrow Keys
+to mark text:		Ctrl+space
+to copy text: 		Alt+w
+to paste text:		Ctrl+b then ]
 ```
