@@ -16,7 +16,6 @@ set-option -g set-clipboard on
 setw -g mode-keys vi
 
 
-
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-yank'
@@ -57,6 +56,47 @@ set -g @plugin 'tmux-plugins/tmux-copycat'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 
+
+
+# panes
+set -g pane-border-style 'fg=colour19'
+set -g pane-active-border-style 'fg=colour172'
+
+# statusbar
+set -g status-position bottom
+set -g status-justify left
+set -g status-style 'bg=colour235 fg=colour255'
+
+set -g status-left "  "
+set -g status-left-length 50
+
+set -g status-right "#[bg=colour235,fg=colour255] %a %b %e #[bg=colour235,fg=colour255] %H:%M:%S  "
+set -g status-right-length 50
+
+# panes
+set -g pane-border-style 'bg=default fg=colour19'
+set -g pane-active-border-style 'bg=default fg=colour172'
+
+# messages
+set -g message-style 'fg=colour255 bg=colour62'
+
+# open new windows in the current path
+bind c new-window -c "#{pane_current_path}"
+
+# allow focus events to get through to applications running in tmux
+set -g focus-events on
+
+# Use Shift-arrow keys without prefix key to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+
 ```
 Reload TMUX environment so TPM is sourced:
 ```
@@ -89,4 +129,10 @@ to move around: 	Arrow Keys
 to mark text:		Ctrl+space
 to copy text: 		Alt+w
 to paste text:		Ctrl+b then ]
+```
+
+command line
+```
+new session : cnt+b c
+change session : cnt+b s
 ```
