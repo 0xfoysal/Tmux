@@ -1,0 +1,35 @@
+1. sudo apt-get update
+2. sudo apt-get install fzf
+3. sudo apt install fd-find
+   mkdir -p ~/.local/bin
+   ln -s $(which fdfind) ~/.local/bin/fd
+   export PATH=$PATH:~/.local/bin
+
+4. sudo apt-get install bad // for colorfull code
+or
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+
+shell set intregration .bashrc or .zshrc
+5. nano ~/.zshrc
+  # Set up fzf key bindings and fuzzy completion
+  4. source <(fzf --zsh)
+  or in bash 
+  eval "$(fzf --bash)"
+  or in fish
+  fzf --fish | source
+
+6. source ~/.zshrc
+
+
+
+
+command line:
+preview code & details
+  - fzf --preview="cat {}"
+  - cat selected-file | fzf
+  - fzf --preview="batcat --color=always {}"
+  - history | fzf
+  file open
+  - nano $(fzf --preview="batcat --color=always {}")
