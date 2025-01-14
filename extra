@@ -25,12 +25,11 @@ shell set intregration .bashrc or .zshrc
 7. sudo apt install cargo
 
    eza install
-   sudo apt update
-   sudo apt install build-essential git
-   git clone https://github.com/eza-community/eza.git
-   cd eza
-   cargo install --path .
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   source $HOME/.cargo/env
+   cargo install eza
    eza --version
+8. sudo apt install grc -y
 
 
 
