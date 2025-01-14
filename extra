@@ -22,6 +22,20 @@ shell set intregration .bashrc or .zshrc
 
 6. source ~/.zshrc
 
+7. sudo apt install cargo
+
+   eza install
+   sudo apt update
+   sudo apt install build-essential git
+   git clone https://github.com/eza-community/eza.git
+   cd eza
+   cargo install --path .
+   eza --version
+
+
+
+
+
 
 
 
